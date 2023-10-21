@@ -3,10 +3,10 @@ package com.JavaProgramExample;
 public class SortString {
 
 	public static void main(String[] args) {
-		a();
+		shiftZeroNumberToRight();
 	}
 
-	public static void a() {
+	public static void shiftZeroNumberToRight() {
 		try {
 
 			int n[] = { 44, 6, 75, 0, 3, 0, 7, 0, 433, 0, 0, 20, 0, 0, 6, 7, 8 };
@@ -14,11 +14,10 @@ public class SortString {
 			for (int i = 0; i < n.length; i++)
 				if (n[i] != 0)
 					n[temp++] = n[i];
-					while (temp < n.length)
-						n[temp++] = 0;
-			
-			for(int j=0;j<n.length;j++)
-			{
+			while (temp < n.length)
+				n[temp++] = 0;
+
+			for (int j = 0; j < n.length; j++) {
 				System.out.print(n[j] + " ");
 			}
 		} catch (Exception e) {
