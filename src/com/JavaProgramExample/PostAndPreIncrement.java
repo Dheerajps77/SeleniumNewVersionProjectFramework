@@ -15,6 +15,7 @@ public class PostAndPreIncrement {
 			b=a++;
 			System.out.println(b); //10
 			System.out.println(a); //11
+			System.out.println(b);
 			
 		} catch (Exception e) {
 			throw e;
@@ -37,7 +38,7 @@ public class PostAndPreIncrement {
 	}
 	
 	public static void main(String[] args) {
-		preIncreamentOp();
+		postIncreamentOp();
 	}
 
 }
