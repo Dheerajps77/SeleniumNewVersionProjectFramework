@@ -4,7 +4,7 @@ public class DuplicateNumbers {
 	
 	public static void main(String[] args) {
 		
-		CheckDuplicateString();
+		CheckDuplicateNumber();
 	}	
 	
 	

@@ -1,10 +1,7 @@
 package Feb2024;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
-import Sept.charCount;
 
 public class Sortings {
 
@@ -222,7 +219,6 @@ public class Sortings {
 	public static void SwapFirstCharAndLastCharFromString() {
 		String str = "Dheeraj Pratap Singh";
 		String removedSpacedString = str.replaceAll(" ", "");
-		String removedString = "";
 
 		try {
 			char[] charOfString = removedSpacedString.toCharArray();
@@ -248,7 +244,7 @@ public class Sortings {
 	public static void removeSpecialChar() {
 		try {
 
-			//String specialChar = "~`!@#$%^&*()-_+={}[]|\\/:\\;\"'<>,.?";
+			// String specialChar = "~`!@#$%^&*()-_+={}[]|\\/:\\;\"'<>,.?";
 
 			String name = "Dheeraj&*()-_+=Sin&*()Pratap&*Singh_+=";
 			char nameOfChar[] = name.toCharArray();
@@ -264,9 +260,70 @@ public class Sortings {
 		}
 	}
 
-	public static void main(String[] args) {
-		removeSpecialChar();
+	public static String sortWithoutFirstCharacters(String input, int numberOfCharactersToIgnore) {
+		if (input == null || input.length() <= numberOfCharactersToIgnore)
+			return input; // If there are fewer characters than the number to ignore, return input as it
+							// is
 
+		char[] chars = input.toCharArray();
+
+		// Sorting the characters except the first characters
+		for (int i = numberOfCharactersToIgnore; i < chars.length; i++) {
+			for (int j = numberOfCharactersToIgnore; j < chars.length - 1; j++) {
+				if (chars[j] > chars[j + 1]) {
+					char temp = chars[j];
+					chars[j] = chars[j + 1];
+					chars[j + 1] = temp;
+				}
+			}
+		}
+
+		return new String(chars);
+	}
+
+	public static String removeFirstFromString(String input) {
+		try {
+			// Check if input is null or empty
+			if (input == null || input.isEmpty()) {
+				return input;
+			}
+
+			StringBuilder modifiedString = new StringBuilder();
+			StringBuilder currentWord = new StringBuilder();
+			boolean firstCharSkipped = false;
+
+			for (int i = 0; i < input.length(); i++) {
+				char currentChar = input.charAt(i);
+
+				if (currentChar == ' ') {
+					if (firstCharSkipped) {
+						modifiedString.append(currentWord).append(' ');
+						currentWord.setLength(0);
+						firstCharSkipped = false;
+					}
+				} else {
+					if (!firstCharSkipped) {
+						firstCharSkipped = true;
+					}
+					currentWord.append(currentChar);
+				}
+			}
+
+			if (firstCharSkipped) {
+				modifiedString.append(currentWord);
+			}
+
+			return modifiedString.toString();
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	public static void main(String[] args) {
+		/// removeUpparCase();
+
+		String newStrin=removeFirstFromString("Dheeraj Pratap Singh");
+		System.out.println(removeFirstFromString("Dheeraj Pratap Singh"));
 	}
 
 }

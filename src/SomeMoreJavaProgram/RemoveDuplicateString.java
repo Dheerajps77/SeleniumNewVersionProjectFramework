@@ -147,7 +147,7 @@ Output:
 		 */
 	}
 	public static void main(String[] args) {
-		countDuplicateString();
+		removeDuplicateString();
 		
 	}
 
