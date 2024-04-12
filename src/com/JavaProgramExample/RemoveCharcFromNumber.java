@@ -10,7 +10,7 @@ public class RemoveCharcFromNumber {
 		String str="786sa90as";
 		//CheckCharInNumbers(str);
 		//printCharOnly();
-		printCharOnly();
+		CheckCharInNumbers(str);
 	}
 	
 	public static void countWordsInString()
@@ -51,7 +51,7 @@ public class RemoveCharcFromNumber {
 		}
 		System.out.println(temp);*/
 	}
-	public static void printCharOnly()
+	public static void printNumbersOnly()
 	{
 		String str="helloguys345345wassup32434@!@#@";				
 		
