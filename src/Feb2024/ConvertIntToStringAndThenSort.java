@@ -208,7 +208,7 @@ public class ConvertIntToStringAndThenSort {
 				}
 				System.out.print(newArr[y] + " ");
 			}
-			System.out.println("\nSecond highest number : " + newArr[newArr.length-2]);
+			System.out.println("\nSecond highest number : " + newArr[newArr.length - 2]);
 
 		} catch (Exception e) {
 			throw e;

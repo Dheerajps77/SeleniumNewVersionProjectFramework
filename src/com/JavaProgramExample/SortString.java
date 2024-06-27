@@ -3,7 +3,7 @@ package com.JavaProgramExample;
 public class SortString {
 
 	public static void main(String[] args) {
-		shiftZeroNumberToRight();
+		SortStringProgram();
 	}
 
 	public static void shiftZeroNumberToRight() {

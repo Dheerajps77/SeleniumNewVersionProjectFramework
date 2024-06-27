@@ -318,12 +318,42 @@ public class Sortings {
 			throw e;
 		}
 	}
+	
+	
+	public static void sortWords()
+	{
+		String statement="I am master.This is my new Number. Please don't use for public purposes".toLowerCase();
+		String temp="";
+		try {
+			
+			String[] arrayString=statement.split(" ");
+			
+			for(int i=0;i<arrayString.length;i++)
+			{
+				for(int j=i+1;j<arrayString.length;j++)
+				{
+					if(arrayString[i].compareTo(arrayString[j])>0)
+					{
+						temp=arrayString[i];
+						arrayString[i]=arrayString[j];
+						arrayString[j]=temp;
+					}
+				}
+				System.out.println(arrayString[i]);
+			}
+			
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 
 	public static void main(String[] args) {
 		/// removeUpparCase();
 
-		String newStrin=removeFirstFromString("Dheeraj Pratap Singh");
-		System.out.println(removeFirstFromString("Dheeraj Pratap Singh"));
+		//String newStrin=removeFirstFromString("Dheeraj Pratap Singh");
+		//System.out.println(removeFirstFromString("Dheeraj Pratap Singh"));
+		sortWords();
+		
 	}
 
 }
