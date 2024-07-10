@@ -8,7 +8,7 @@ import java.util.Set;
 public class ConvertIntToStringAndThenSort {
 
 	public static void main(String[] args) {
-		askUserSpecificNumberIntoArraysAndThenSortAfterRemovedDuplicay();
+		playingWithUnicodeCharacterToConvertCharIntoInt();
 	}
 
 	public static void userDefinedToEnterNumbersInArray() {
@@ -47,7 +47,8 @@ public class ConvertIntToStringAndThenSort {
 
 			char[] charArr = string.toCharArray();
 			for (int i = 0; i < charArr.length; i++) {
-
+				
+				// ASCII code of numbers .. 48 to 57
 				// Convert char to int by subtracting '0'
 				// Ex. Below
 				// The Unicode value of '4' is 52.
