@@ -6,11 +6,6 @@ public class DuplicateNumbers {
 		
 		CheckDuplicateNumber();
 	}	
-	
-	
-	
-	
-	
 		
 	public static void CheckDuplicateNumber()
 	{

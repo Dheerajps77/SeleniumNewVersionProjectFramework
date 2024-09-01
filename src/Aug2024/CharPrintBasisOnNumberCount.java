@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class CharPrintBasisOnNumberCount {
 
+	private static Scanner scanner;
+
 	public static void userSpecificValue() {
 		try {
-			
-			Scanner scanner=new Scanner(System.in);
+			scanner = new Scanner(System.in);
 			System.out.println("Please enter value");
 			String userSpecificValue=scanner.next();
 			
