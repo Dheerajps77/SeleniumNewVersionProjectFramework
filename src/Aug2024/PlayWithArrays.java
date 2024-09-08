@@ -51,24 +51,19 @@ public class PlayWithArrays {
 			}
 		}
 	}
-	
-	public static void findMinAndMaxUsingDirectApproach()
-	{
+
+	public static void findMinAndMaxUsingDirectApproach() {
 		try {
 			int[] number = { 32, 14, 3, 68, 34, 543, 32, 465, 9, 48, 254, 2244, 24, 12, 72, 54, 46, 6 };
-			
-			int min=number[0];
-			int max=number[0];
-			
-			for(int i=0;i<number.length;i++)
-			{
-				if(min<number[i])
-				{
-					min=number[i];
-				}
-				else if(max>number[i])
-				{
-					max=number[i];
+
+			int min = number[0];
+			int max = number[0];
+
+			for (int i = 0; i < number.length; i++) {
+				if (min < number[i]) {
+					min = number[i];
+				} else if (max > number[i]) {
+					max = number[i];
 				}
 			}
 			System.out.println("Minimum value is : " + min);
@@ -77,27 +72,23 @@ public class PlayWithArrays {
 			throw e;
 		}
 	}
-	
-	public static void findMinAndMaxUsingBubbleSort()
-	{
+
+	public static void findMinAndMaxUsingBubbleSort() {
 		try {
 			int[] number = { 32, 14, 3, 68, 34, 543, 32, 465, 9, 48, 254, 2244, 24, 12, 72, 54, 46, 6 };
-			int temp=0;
-			for(int i=0;i<number.length;i++)
-			{
-				for(int j=i+1;j<number.length;j++)
-				{
-					if(number[i]>number[j])
-					{
-						temp=number[i];
-						number[i]=number[j];
-						number[j]=temp;
-					}					
+			int temp = 0;
+			for (int i = 0; i < number.length; i++) {
+				for (int j = i + 1; j < number.length; j++) {
+					if (number[i] > number[j]) {
+						temp = number[i];
+						number[i] = number[j];
+						number[j] = temp;
+					}
 				}
 				System.out.println(number[i]);
 			}
-			
-			System.out.println("Max value : " + (number[number.length-1]));
+
+			System.out.println("Max value : " + (number[number.length - 1]));
 			System.out.println("Min value : " + (number[0]));
 		} catch (Exception e) {
 			throw e;

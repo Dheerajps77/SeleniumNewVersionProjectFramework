@@ -1,6 +1,5 @@
 package Aug2024;
 
-import java.awt.font.NumericShaper;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -222,11 +221,10 @@ public class RemoveElementFromArray {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	public static void shiftZeroValueAtLeft() {
 		try {
-			int[] numbers = { 0, 343, 23, 8, 6, 1, 67, 45, 3, 656, 7, 8654, 0, 54, 64, 323, 0, 0, 0, 0};
+			int[] numbers = { 0, 343, 23, 8, 6, 1, 67, 45, 3, 656, 7, 8654, 0, 54, 64, 323, 0, 0, 0, 0 };
 			int temp = 0;
 			for (int i = 0; i < numbers.length; i++) {
 				if (numbers[i] == 0) {
@@ -251,7 +249,7 @@ public class RemoveElementFromArray {
 	public static void main(String[] args) {
 		// removeNegativeNumberUsingArrays();
 		// removeSingleValueFromArray(-98);
-		//shiftNegativeValueAtLeft();
+		// shiftNegativeValueAtLeft();
 		shiftZeroValueAtLeft();
 	}
 
