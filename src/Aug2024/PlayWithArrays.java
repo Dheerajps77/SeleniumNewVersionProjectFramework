@@ -133,17 +133,12 @@ public class PlayWithArrays {
 			builder = new StringBuilder();
 			charArray = phrase.toCharArray();
 
-			// System.out.println("Original string");
-			// System.out.println(phrase);
 			for (int i = 0; i < charArray.length; i++) {
 				if ((charArray[i] >= 'a' && charArray[i] <= 'z') || (charArray[i] >= 'A' && charArray[i] <= 'Z')
 						|| (charArray[i] == ' ')) {
 					builder.append(charArray[i]);
 				}
 			}
-			// System.out.println("Modification string");
-			// System.out.println(builder.toString());
-
 			stringArray = builder.toString().split(" ");
 
 			for (int i = 0; i < stringArray.length; i++) {

@@ -11,9 +11,9 @@ public class IntegerValues {
 	 */
 	public static void main(String[] args) {
 		
-		Integer num1=127;
+		Integer num1=200;
 		Integer num2=126;
-		Integer num3=127;
+		Integer num3=200;
 		Integer num4=126;
 		
 		if(num1==num3)

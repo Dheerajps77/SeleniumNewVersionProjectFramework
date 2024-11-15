@@ -7,7 +7,7 @@ public class ReplaceinStringAndAddStringValueInStrings {
 
 			String str = "you and me not going to do this work. Please You stop everything whatever you have right now."
 					+ " you do not have to worry for future things. I will take care of everything. "
-					+ "you just sit release and let me handle the things";
+					+ "you just sit release and let me handle the things you";
 
 			String str1[] = str.split(" ");
 			StringBuilder builder = new StringBuilder();
@@ -20,14 +20,6 @@ public class ReplaceinStringAndAddStringValueInStrings {
 				}
 			}
 
-			// Handle the last word after the loop ends
-			String lastWord = builder.toString();
-			if (lastWord.equalsIgnoreCase("you")) {
-				builder.append("chalbe");
-			} else {
-				builder.append(lastWord);
-			}
-
 			System.out.println(builder.toString());
 
 		} catch (Exception e) {
@@ -35,36 +27,50 @@ public class ReplaceinStringAndAddStringValueInStrings {
 		}
 	}
 
-	public static void repleaceSpecificWordsInStringsAndRemoveDelimitors() {
-		try {
+	public static void replaceSpecificWordsInStringsAndRemoveDelimiters() {
+	    try {
 
-			String str = "you and me not going to do this work. Please stop everything whatever you have right now."
-					+ " You do not have to worry for future things. I will take care of everything."
-					+ "You just sit release and let me handle the things.you wont be handling such thing now";
+	        String str = "you and me not going to do this work. Please stop everything whatever you have right now."
+	                + " You do not have to worry for future things. I will take care of everything."
+	                + "You just sit release and let me handle the things. you wont be handling such thing now";
 
-			char str1[] = str.toCharArray();
-			StringBuilder builder = new StringBuilder();
+	        // Convert the string to char array and use StringBuilder to modify the string
+	        char[] str1 = str.toCharArray();
+	        StringBuilder builder = new StringBuilder();
 
-			for (int i = 0; i < str1.length; i++) {
-				if ((str1[i] >= 'a' && str1[i] <= 'z') || (str1[i] >= 'A' && str1[i] <= 'Z') || (str1[i] == ' ')) {
-					builder.append(str1[i]);
-				}
-			}
+	        // This flag will check if we are inside a word
+	        StringBuilder word = new StringBuilder();
 
-			// Handle the last word after the loop ends
-			String lastWord = builder.toString();
-			if (lastWord.equalsIgnoreCase("you")) {
-				builder.append("chalbe");
-			} else {
-				builder.append(lastWord);
-			}
+	        for (int i = 0; i < str1.length; i++) {
+	            // If the character is a letter or a space, add to word builder
+	            if ((str1[i] >= 'a' && str1[i] <= 'z') || (str1[i] >= 'A' && str1[i] <= 'Z') || str1[i] == ' ') {
+	                word.append(str1[i]);
+	            }
 
-			System.out.println(builder.toString());
+	            // When space or end of string is encountered, check the word and append to builder
+	            if (str1[i] == ' ' || i == str1.length - 1) {
+	                String currentWord = word.toString().trim();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	                // If the current word is "you", replace with "chalbe"
+	                if (currentWord.equalsIgnoreCase("you")) {
+	                    builder.append("chalbe ");
+	                } else {
+	                    builder.append(currentWord).append(" ");
+	                }
+
+	                // Reset the word for the next one
+	                word.setLength(0);
+	            }
+	        }
+
+	        // Print the result
+	        System.out.println(builder.toString().trim());
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
+
 
 	public static void repleaceSpecificWordsInStringsRemoveDelimitorsWithEqualIgnores() {
 		try {
@@ -184,7 +190,7 @@ public class ReplaceinStringAndAddStringValueInStrings {
 	}
 
 	public static void main(String[] args) {
-		addSpecificWordWithUserDefinedWordRemoveDelimitorsWithEqualIgnores();
+		repleaceSpecificWordsInStrings();
 	}
 
 }
