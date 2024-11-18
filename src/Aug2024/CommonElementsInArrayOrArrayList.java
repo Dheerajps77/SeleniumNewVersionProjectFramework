@@ -1,81 +1,129 @@
 package Aug2024;
 
-import java.util.ArrayList;
-
 import java.util.HashSet;
-
 import java.util.Set;
 
 public class CommonElementsInArrayOrArrayList {
 
-	public static void commonElementsUsingDifferentApproach() {
+	public static void findCommonElementInArrayWithoutCheckingDuplicates() {
 		try {
-			ArrayList<Integer> arrayList = new ArrayList<Integer>();
-			ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
-			arrayList.add(34);
-			arrayList.add(35);
-			arrayList.add(45);
-			arrayList.add(21);
-			arrayList.add(65);
-			arrayList.add(24);
+			int[] array1 = { 34, 5, 3, 3, 24, 3, 5, 63, 44, 6, 66, 86, 54, 53, 454, 4, 5, 778, 43, 32, 5, 4, 23 };
+			int[] array2 = { 34, 5, 3, 3, 2, 3, 5, 6, 4, 6, 66, 8, 54, 53, 45, 4, 5, 78, 343, 632, 35, 14, 54 };
+			int[] commonElements = new int[array1.length]; // Allocate a fixed-size array for common elements
+			int temp = 0;
 
-			arrayList1.add(34);
-			arrayList1.add(351);
-			arrayList1.add(435);
-			arrayList1.add(21);
-			arrayList1.add(65);
-			arrayList1.add(124);
-
-			Set<Integer> integer1 = new HashSet<Integer>(arrayList);
-			Set<Integer> integer2 = new HashSet<Integer>(arrayList1);
-			integer1.retainAll(integer2);
-			for (int value : integer1) {
-				System.out.println(value);
+			// Check if the lengths of both arrays are equal
+			if (array1.length != array2.length) {
+				System.out.println("The lengths of the two arrays are not equal. Exiting the program.");
+				return; // Exit the method if lengths are not equal
 			}
-		} catch (Exception e) {
 
-			throw e;
+			// Find common elements
+			for (int i = 0; i < array1.length; i++) {
+				for (int j = 0; j < array2.length; j++) {
+					if (array1[i] == array2[j]) {
+						commonElements[temp++] = array1[i];
+						break;
+					}
+
+				}
+			}
+
+			// Print the common elements
+			System.out.println("Common Elements:");
+			for (int i = 0; i < temp; i++) {
+				System.out.println(commonElements[i]);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
-	public static void commonElements() {
+	public static void findCommonElementInArrayAndCheckDuplicatesAsWell() {
 		try {
-			ArrayList<Integer> arrayList = new ArrayList<Integer>();
-			ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
-			ArrayList<Integer> commonValue = new ArrayList<Integer>();
+			int[] array1 = { 34, 5, 3, 3, 24, 3, 5, 63, 44, 6, 66, 86, 54, 53, 454, 4, 5, 778, 43, 32, 5, 4, 23 };
+			int[] array2 = { 34, 5, 3, 3, 2, 3, 5, 6, 4, 6, 66, 8, 54, 53, 45, 4, 5, 78, 343, 632, 35, 14, 54 };
+			int[] commonElements = new int[array1.length]; // Allocate a fixed-size array for common elements
+			int temp = 0;
 
-			arrayList.add(34);
-			arrayList.add(35);
-			arrayList.add(45);
-			arrayList.add(21);
-			arrayList.add(65);
-			arrayList.add(24);
+			// Check if the lengths of both arrays are equal
+			if (array1.length != array2.length) {
+				System.out.println("The lengths of the two arrays are not equal. Exiting the program.");
+				return; // Exit the method if lengths are not equal
+			}
 
-			arrayList1.add(34);
-			arrayList1.add(351);
-			arrayList1.add(435);
-			arrayList1.add(21);
-			arrayList1.add(65);
-			arrayList1.add(124);
+			// Find common elements
+			for (int i = 0; i < array1.length; i++) {
+				for (int j = 0; j < array2.length; j++) {
+					if (array1[i] == array2[j]) {
+						// Check if the element is already present in the result array
+						boolean alreadyPresent = false;
+						for (int k = 0; k < temp; k++) {
+							if (commonElements[k] == array1[i]) {
+								alreadyPresent = true;
+								break;
+							}
+						}
 
-			if (arrayList.size() == arrayList1.size()) {
-				for (int i = 0; i < arrayList.size(); i++) {
-					if (arrayList.get(i).equals(arrayList1.get(i))) {
-						// commonValue.add(arrayList.get(i));
-						System.out.println(arrayList.get(i));
+						// If not present, add the element to the result array
+						if (!alreadyPresent) {
+							commonElements[temp++] = array1[i];
+						}
+						break; // Break inner loop to avoid counting duplicates
 					}
 				}
-			} else {
-				System.out.println("The size of 2 arraylist values are different");
 			}
+
+			// Print the common elements
+			System.out.println("Common Elements:");
+			for (int i = 0; i < temp; i++) {
+				System.out.println(commonElements[i]);
+			}
+
 		} catch (Exception e) {
-			throw e;
+			e.printStackTrace();
+		}
+	}
+
+	public static void findCommonElementInArrayUsingSets() {
+		try {
+
+			int[] array1 = { 34, 5, 3, 3, 24, 3, 5, 63, 44, 6, 66, 86, 54, 53, 454, 4, 5, 778, 43, 32, 5, 4, 23 };
+			int[] array2 = { 34, 5, 3, 3, 2, 3, 5, 6, 4, 6, 66, 8, 54, 53, 45, 4, 5, 78, 343, 632, 35, 14, 54 };
+
+			// Check if the lengths of both arrays are equal
+			if (array1.length != array2.length) {
+				System.out.println("The lengths of the two arrays are not equal. Exiting the program.");
+				return; // Exit the method if lengths are not equal
+			}
+
+			Set<Integer> set1 = new HashSet<>();
+			Set<Integer> commonElements = new HashSet<>();
+
+			// Add elements of array1 to set1
+			for (int num : array1) {
+				set1.add(num);
+			}
+
+			// Find common elements
+			for (int num : array2) {
+				if (set1.contains(num)) {
+					commonElements.add(num);
+				}
+			}
+
+			// Print the common elements
+			System.out.println("Common Elements: " + commonElements);
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
 	public static void main(String[] args) {
 
-		commonElementsUsingDifferentApproach();
+		findCommonElementInArrayAndCheckDuplicatesAsWell();
 
 	}
 

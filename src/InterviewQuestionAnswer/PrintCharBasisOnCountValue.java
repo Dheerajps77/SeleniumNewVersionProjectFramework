@@ -1,6 +1,31 @@
 package InterviewQuestionAnswer;
 
 public class PrintCharBasisOnCountValue {
+	
+	
+	public static void printOtherThanChars()
+	{
+		try {
+			
+			String str = "DakeVKGm14nDBH8493maaerf(*@#*(*$#Njdodskdo#)@(#)(@392382nKlkldsk";
+			
+			char[] charArray=str.toCharArray();
+			
+			for(int i=0;i<charArray.length;i++)
+			{
+				if(!(charArray[i]>='a' && charArray[i]<='z')
+						&&(!(charArray[i]>='A' && charArray[i]<='Z'))
+						&&(!(charArray[i]>='0' && charArray[i]<='9')))
+				{ 
+					System.out.print(charArray[i]); // (*@#*(*$##)@(#)(@
+				}
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void printRepeatedChar() {
 		String str = "ddddddmmmmmmaalloiiieeeeenmm";
@@ -171,6 +196,6 @@ public class PrintCharBasisOnCountValue {
 	}
 
 	public static void main(String[] args) {
-		printRepeatedChar();
+		printOtherThanChars();
 	}
 }

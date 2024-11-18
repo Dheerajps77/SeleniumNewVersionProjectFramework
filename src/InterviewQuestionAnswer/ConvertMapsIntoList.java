@@ -134,7 +134,7 @@ public class ConvertMapsIntoList {
             System.out.println("Sorted list entries:");
 			List<Map.Entry<Integer, String>> listOfMaps = new ArrayList<>(map.entrySet());
 
-			listOfMaps.sort(Map.Entry.comparingByKey());
+			listOfMaps.sort(Map.Entry.comparingByValue());
 
 			/// List<E> newList=new ArrayList<E>();
 			for (Map.Entry<Integer, String> listOfValue : listOfMaps) {

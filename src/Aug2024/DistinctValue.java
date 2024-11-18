@@ -22,13 +22,9 @@ public class DistinctValue {
 				}
 			}
 
-			Set<Entry<Double, Integer>> setsOfEntry = maps.entrySet();
-			Iterator<Entry<Double, Integer>> iteratorOfSet = setsOfEntry.iterator();
-
-			while (iteratorOfSet.hasNext()) {
-				Entry<Double, Integer> entrySet = iteratorOfSet.next();
-				System.out.println(entrySet.getKey() + " : " + entrySet.getValue());
-			}
+			for (Map.Entry<Double, Integer> entry : maps.entrySet()) {
+	            System.out.println(entry.getKey() + " : " + entry.getValue());
+	        }
 
 		} catch (Exception e) {
 			throw e;
@@ -49,13 +45,9 @@ public class DistinctValue {
 				}
 			}
 
-			Set<Entry<Float, Integer>> setsOfEntry = maps.entrySet();
-			Iterator<Entry<Float, Integer>> iteratorOfSet = setsOfEntry.iterator();
-
-			while (iteratorOfSet.hasNext()) {
-				Entry<Float, Integer> entrySet = iteratorOfSet.next();
-				System.out.println(entrySet.getKey() + " : " + entrySet.getValue());
-			}
+			for (Map.Entry<Float, Integer> entry : maps.entrySet()) {
+	            System.out.println(entry.getKey() + " : " + entry.getValue());
+	        }
 
 		} catch (Exception e) {
 			throw e;
